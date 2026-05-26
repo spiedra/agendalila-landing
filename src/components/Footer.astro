@@ -1,0 +1,83 @@
+---
+import { site } from "../data/site";
+
+const year = new Date().getFullYear();
+const linkClass =
+  "inline-block py-1 text-[13px] text-lilac-800 transition-colors hover:text-lilac-700";
+const headClass =
+  "mb-3.5 mt-1 text-[11px] font-bold uppercase tracking-[2px] text-lilac-700";
+---
+
+<footer class="bg-lilac-50 px-6 pb-[30px] pt-[50px]">
+  <div
+    class="mx-auto grid max-w-[1140px] grid-cols-2 gap-9 md:grid-cols-[1.5fr_1fr_1fr_1fr]"
+  >
+    {/* Brand */}
+    <div class="col-span-2 md:col-span-1">
+      <div class="font-display text-[28px] leading-none text-lilac-700">
+        {site.name}
+      </div>
+      <p class="mt-2.5 max-w-[280px] text-[13px] leading-[1.6] text-lilac-700/70">
+        {site.tagline}
+      </p>
+    </div>
+
+    {/* Producto */}
+    <div>
+      <h4 class={headClass}>Producto</h4>
+      <ul class="flex flex-col gap-[9px]">
+        {
+          site.footer.producto.map((l) => (
+            <li>
+              <a href={l.href} class={linkClass}>
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    {/* Empresa */}
+    <div>
+      <h4 class={headClass}>Empresa</h4>
+      <ul class="flex flex-col gap-[9px]">
+        {
+          site.footer.empresa.map((l) => (
+            <li>
+              <a href={l.href} class={linkClass}>
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    {/* Contacto */}
+    <div>
+      <h4 class={headClass}>Contacto</h4>
+      <ul class="flex flex-col gap-[9px]">
+        <li><a href={`mailto:${site.email}`} class={linkClass}>{site.email}</a></li>
+        <li>
+          <a
+            href={site.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={linkClass}
+          >
+            {site.instagram.handle}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    {/* Legal */}
+    <div
+      class="col-span-full mt-[30px] flex flex-wrap justify-between gap-3.5 pt-[18px] text-xs text-lilac-700/70"
+      style="border-top: 1px solid color-mix(in srgb, var(--brand-decor) 18%, transparent);"
+    >
+      <span>© {year} AgendaLila · Hecho con 💜 en Costa Rica</span>
+    </div>
+  </div>
+</footer>

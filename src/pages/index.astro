@@ -9,6 +9,7 @@ import Problem from "../components/Problem.astro";
 import Features from "../components/Features.astro";
 import FounderStory from "../components/FounderStory.astro";
 import FaqSection from "../components/FaqSection.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout>
@@ -20,6 +21,7 @@ import FaqSection from "../components/FaqSection.astro";
     <Features />
     <FounderStory />
     <FaqSection />
-    {/* next: FinalCTA (form) · Footer — Testimonial deferred */}
+    {/* FinalCTA (form) slots in here — above the footer. Testimonial deferred. */}
   </main>
+  <Footer />
 </BaseLayout>
