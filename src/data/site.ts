@@ -18,7 +18,6 @@ export const site = {
 
   nav: [
     { label: "Producto", href: "#producto" },
-    { label: "Para quién", href: "#para-quien" },
     { label: "Historia", href: "#historia" },
     { label: "FAQ", href: "#faq" },
   ] satisfies NavLink[],
@@ -33,7 +32,6 @@ export const site = {
     ] satisfies NavLink[],
     empresa: [
       { label: "La historia", href: "#historia" },
-      { label: "Para quién", href: "#para-quien" },
       { label: "FAQ", href: "#faq" },
       { label: "Solicitar invitación", href: "#solicitar" },
     ] satisfies NavLink[],

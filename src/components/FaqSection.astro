@@ -1,0 +1,47 @@
+---
+import SectionHead from "./SectionHead.astro";
+import { faqHead, faqs } from "../data/faq";
+---
+
+{/* Native <details> accordion — accessible, no JS. `name` makes it exclusive
+    (one open at a time); the first is open by default. */}
+<section id="faq" class="bg-lilac-50 px-6 py-20">
+  <div class="mx-auto max-w-[1140px]">
+    <SectionHead eyebrow={faqHead.eyebrow} title={faqHead.title} />
+    <div class="mx-auto flex max-w-[760px] flex-col gap-3">
+      {
+        faqs.map((f, i) => (
+          <details
+            name="faq"
+            open={i === 0}
+            class="faq-item rounded-2xl bg-white shadow-[var(--shadow-xs)] transition-shadow hover:shadow-[var(--shadow-sm)]"
+          >
+            <summary class="flex min-h-[44px] cursor-pointer items-center justify-between gap-2.5 px-[22px] py-[18px] text-[15px] font-semibold text-lilac-900">
+              <span>{f.q}</span>
+              <span class="plus shrink-0 text-[22px] leading-none text-lilac-700 transition-transform duration-200" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <div class="px-[22px] pb-[18px] text-sm leading-[1.7] text-lilac-800">
+              {f.a}
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Hide the native disclosure marker; we use our own "+" */
+  .faq-item > summary {
+    list-style: none;
+  }
+  .faq-item > summary::-webkit-details-marker {
+    display: none;
+  }
+  /* Rotate the "+" into an "×" when open */
+  .faq-item[open] > summary .plus {
+    transform: rotate(45deg);
+  }
+</style>
