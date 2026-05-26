@@ -1,0 +1,39 @@
+---
+import SectionHead from "./SectionHead.astro";
+import { problemSection } from "../data/problems";
+
+const { eyebrow, title, description, cards } = problemSection;
+
+// Inline icon set (20px, 1.8 stroke, currentColor) — ported from the design's
+// P_ICONS. Decorative: the card heading carries the meaning, so the icon box
+// is aria-hidden.
+const ICONS: Record<string, string> = {
+  chat: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>`,
+  book: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.5A2.5 2.5 0 0 1 4.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z"/><path d="M2 4.5V22h18"/></svg>`,
+  ghost: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
+};
+---
+
+<section id="problema" class="bg-lilac-50 px-6 py-20">
+  <div class="mx-auto max-w-[1140px]">
+    <SectionHead eyebrow={eyebrow} title={title} description={description} />
+
+    <div class="grid gap-[18px] md:grid-cols-3">
+      {
+        cards.map((card) => (
+          <article class="rounded-[20px] bg-white px-[26px] py-7 shadow-[var(--shadow-sm)]">
+            <div
+              aria-hidden="true"
+              class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-lilac-150 text-lilac-700"
+              set:html={ICONS[card.icon]}
+            />
+            <h3 class="mb-1.5 text-[17px] font-semibold text-lilac-900">
+              {card.title}
+            </h3>
+            <p class="text-sm leading-[1.55] text-lilac-700/70">{card.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

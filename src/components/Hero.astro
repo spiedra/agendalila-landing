@@ -1,5 +1,6 @@
 ---
 import { hero } from "../data/hero";
+import Eyebrow from "./Eyebrow.astro";
 ---
 
 <section id="top" class="relative overflow-hidden">
@@ -18,11 +19,7 @@ import { hero } from "../data/hero";
   >
     {/* ── Left: copy ── */}
     <div>
-      <p
-        class="inline-block text-xs font-bold uppercase tracking-[0.18em] text-lilac-700/70"
-      >
-        {hero.eyebrow}
-      </p>
+      <Eyebrow>{hero.eyebrow}</Eyebrow>
 
       <h1
         class="mt-4 font-display text-[clamp(2.1rem,5.2vw,3.6rem)] leading-[1.05] text-lilac-900"

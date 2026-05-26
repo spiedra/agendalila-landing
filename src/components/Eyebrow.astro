@@ -1,0 +1,20 @@
+---
+// Small uppercase kicker above a heading. One source of truth for the eyebrow
+// treatment so every section matches the design token exactly:
+//   --text-eyebrow: 700 10px/1.2 + letter-spacing 3px + uppercase + brand color.
+// Brand color (lilac-700) is the interactive/strong tone — AA-safe, not the
+// decorative lilac-500.
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<span
+  class:list={[
+    "inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-lilac-700",
+    className,
+  ]}
+>
+  <slot />
+</span>

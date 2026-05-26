@@ -13,6 +13,9 @@ export const proof = {
   ledeStrong: "Amorelila Estética",
   ledePost:
     ", un salón real en Curridabat. Usado todos los días por la dueña — antes que por nadie más.",
+  // Two honest, quantitative proof points. A third "CR" stat was dropped — it
+  // was a country code dressed as a metric (and "Costa Rica" is already in the
+  // hero eyebrow). The español/colones/WhatsApp angle lives in Features instead.
   stats: [
     { value: "100%", label: "Citas administradas con AgendaLila desde 2024" },
     {
@@ -20,6 +23,5 @@ export const proof = {
       label:
         "Citas perdidas por dobles reservas — el problema que motivó el producto",
     },
-    { value: "CR", label: "Costa Rica primero · español, colones, WhatsApp" },
   ],
 } as const;
