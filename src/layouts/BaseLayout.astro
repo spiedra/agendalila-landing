@@ -1,0 +1,102 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "AgendaLila — Software de citas y CRM para tu negocio de belleza",
+  description = "La plataforma de citas, CRM y recordatorios automáticos para salones, barberías, uñas, spa y estética. Hecha por una esteticista que vive el problema. Acceso por invitación.",
+} = Astro.props;
+
+const ogImage = new URL("/og-image.jpg", Astro.site).href;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+
+// SaaS product schema (not a LocalBusiness — that's the salon site).
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "AgendaLila",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description,
+  url: "https://agendalila.com",
+  inLanguage: "es-CR",
+  publisher: {
+    "@type": "Organization",
+    name: "AgendaLila",
+    url: "https://agendalila.com",
+  },
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Theme (interactive brand color, AA-safe) -->
+    <meta name="theme-color" content="#725f94" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="es_CR" />
+    <meta property="og:site_name" content="AgendaLila" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicon (TODO: add .ico / apple-touch-icon.png / manifest.webmanifest) -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Font preloading: iCiel Cadena self-hosted; Montserrat via Google -->
+    <link
+      rel="preload"
+      href="/fonts/iCielCadena.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rounded+Mplus+1c:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data -->
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLd)}
+    />
+
+    <!-- Analytics: TODO — Cloudflare Web Analytics is auto-injected by the CF
+         dashboard once the Pages project is connected. No manual snippet. -->
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
