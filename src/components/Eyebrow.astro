@@ -6,13 +6,17 @@
 // decorative lilac-500.
 interface Props {
   class?: string;
+  // "brand" (default) on light backgrounds; "light" for dark/gradient sections.
+  tone?: "brand" | "light";
 }
-const { class: className } = Astro.props;
+const { class: className, tone = "brand" } = Astro.props;
+const color = tone === "light" ? "text-lilac-300" : "text-lilac-700";
 ---
 
 <span
   class:list={[
-    "inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-lilac-700",
+    "inline-block text-[10px] font-bold uppercase tracking-[0.3em]",
+    color,
     className,
   ]}
 >
