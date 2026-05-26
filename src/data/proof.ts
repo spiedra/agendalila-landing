@@ -12,7 +12,7 @@ export const proof = {
   ledePre: "Hecho en ",
   ledeStrong: "Amorelila Estética",
   ledePost:
-    ", un salón real en Curridabat. Usado todos los días por la dueña — antes que por nadie más.",
+    ", un salón real en Curridabat, y usado todos los días por su dueña.",
   // Two honest, quantitative proof points. A third "CR" stat was dropped — it
   // was a country code dressed as a metric (and "Costa Rica" is already in the
   // hero eyebrow). The español/colones/WhatsApp angle lives in Features instead.

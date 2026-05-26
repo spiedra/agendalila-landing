@@ -26,7 +26,7 @@ export const features: readonly Feature[] = [
     eyebrow: "Agenda",
     title: "Una vista de tu día que se entiende al toque.",
     description:
-      "Citas codificadas por categoría, vista por día / semana / mes, huecos detectados automáticamente. Sin doble reserva — nunca.",
+      "Citas codificadas por categoría, vista por día / semana / mes, huecos detectados automáticamente. Sin doble reserva, nunca.",
     bullets: [
       "Detecta dobles reservas antes que las hagas vos.",
       "Cada profesional ve solo su agenda.",

@@ -6,7 +6,7 @@ export const problemSection = {
   eyebrow: "El problema real",
   title: "Vos no abriste tu negocio para administrar mensajes.",
   description:
-    "El cuaderno y WhatsApp funcionan hasta que dejan de funcionar — y ahí ya perdiste plata, horas y la confianza de un cliente.",
+    "El cuaderno y WhatsApp funcionan hasta que dejan de funcionar. Y ahí ya perdiste plata, horas y la confianza de un cliente.",
   cards: [
     {
       icon: "chat",
