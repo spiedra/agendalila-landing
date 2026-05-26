@@ -1,21 +1,25 @@
 ---
-// Homepage — composes the SaaS marketing landing sections.
-// Scaffold placeholder: real sections (Nav, Hero, SocialProof, Problem,
-// Features, Founder, Testimonial, FAQ, FinalCTA, Footer) are ported from the
-// Claude Design `marketing-saas` kit into src/components/ + src/data/ next.
+// Homepage — composes the SaaS marketing landing sections in order.
+// Ported from the Claude Design `marketing-saas` kit, data-driven via src/data/.
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <BaseLayout>
-  <main
-    style="min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;text-align:center;"
-  >
-    <h1 style="font-family:var(--font-display);font-size:3rem;color:var(--brand);">
-      AgendaLila
-    </h1>
-    <p style="color:var(--fg-muted);max-width:32rem;">
-      Landing en construcción — scaffold inicial. Próximo: portar las secciones
-      del kit <code>marketing-saas</code>.
-    </p>
+  <Nav />
+  <main id="top">
+    {/* Sections in progress — next: Hero · SocialProof · Problem · Features ·
+        Founder · Testimonial · FAQ · FinalCTA · Footer */}
+    <section
+      style="min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:4rem 1.25rem;text-align:center;"
+    >
+      <h1 style="font-family:var(--font-display);font-size:clamp(2rem,6vw,3.25rem);color:var(--brand);line-height:1.05;">
+        AgendaLila
+      </h1>
+      <p style="color:var(--fg-muted);max-width:34rem;">
+        Nav listo. Portando las secciones del kit <code>marketing-saas</code>:
+        Hero, producto, historia, FAQ y el formulario de invitación.
+      </p>
+    </section>
   </main>
 </BaseLayout>
