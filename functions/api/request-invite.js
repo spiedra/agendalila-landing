@@ -7,7 +7,7 @@
 // Requires (set in the Pages project → Settings):
 //   - D1 binding named `DB`  (table `leads`, see /schema.sql)
 //   - secret `RESEND_API_KEY`
-//   - optional vars `LEAD_NOTIFY_TO` (default hola@agendalila.com) and
+//   - optional vars `LEAD_NOTIFY_TO` (default info@agendalila.com) and
 //     `LEAD_NOTIFY_FROM` (default "AgendaLila <notificaciones@agendalila.com>",
 //     must be on a Resend-verified domain).
 
@@ -62,7 +62,7 @@ export async function onRequestPost({ request, env }) {
         },
         body: JSON.stringify({
           from: env.LEAD_NOTIFY_FROM || "AgendaLila <notificaciones@agendalila.com>",
-          to: [env.LEAD_NOTIFY_TO || "hola@agendalila.com"],
+          to: [env.LEAD_NOTIFY_TO || "info@agendalila.com"],
           subject: `Nueva solicitud — ${lead.negocio} (${lead.rubro})`,
           text:
             `Nombre: ${lead.nombre}\n` +

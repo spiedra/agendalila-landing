@@ -69,7 +69,7 @@ Spanish, **Costa Rican voseo** (solicitá, mirá, contanos). Operator-facing cop
 ## Open TODOs (bootstrap)
 
 - Port the 10 sections from the handoff `marketing-saas` kit → `src/components/*.astro` + `src/data/*.ts` + vanilla scripts.
-- **Request-access form backend:** Cloudflare Pages Function → D1 `leads` table + Resend notification to hola@agendalila.com.
+- **Request-access form backend:** Cloudflare Pages Function → D1 `leads` table + Resend notification to info@agendalila.com.
 - OG image (`/og-image.jpg`, 1200×630) — see `amorelila-landing/scripts/generate-og-image.mjs` for the pattern.
 - Favicon variants (`.ico`, `apple-touch-icon.png`, `manifest.webmanifest`).
 - Connect repo → CF Pages project (dashboard) + apex `agendalila.com` → Pages.

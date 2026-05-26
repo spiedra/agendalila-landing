@@ -19,7 +19,7 @@
 
 ## Issues to resolve during the port (by severity)
 
-- **🔴 HIGH — request-access form is a no-op** (`onSubmit` → `setSubmitted(true)`). It's the page's whole purpose. **Decision: Cloudflare Pages Function → D1 `leads` table + Resend notification to hola@agendalila.com** (approved).
+- **🔴 HIGH — request-access form is a no-op** (`onSubmit` → `setSubmitted(true)`). It's the page's whole purpose. **Decision: Cloudflare Pages Function → D1 `leads` table + Resend notification to info@agendalila.com** (approved).
 - **🟡 MED — it's a React-via-CDN demo** (`window` globals, no imports/exports). The port converts it to Astro components + `src/data/*.ts` + tiny vanilla scripts (no React) — expected work, not a flaw.
 - **🟡 MED — iCiel Cadena font:** self-hosted (woff2/otf), same as the live `amorelila.com`. Same licensing posture as the production salon site.
 - **🟢 LOW — demo asset paths** (`../../assets/...`) to rewire to `public/`; missing production SEO/meta/OG image/favicon variants; no analytics/cookie banner (CF Web Analytics auto-injected once Pages is connected).
