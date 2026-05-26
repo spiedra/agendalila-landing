@@ -104,7 +104,7 @@ import { hero } from "../data/hero";
         vertical stack (no overflow). Decorative → aria-hidden. */}
     <div
       aria-hidden="true"
-      class="relative mx-auto w-full max-w-[460px] lg:mx-0 lg:min-h-[440px]"
+      class="relative mx-auto w-full max-w-[460px] lg:mx-0 lg:min-h-[500px]"
     >
       <div class="flex flex-col gap-4 lg:block lg:gap-0">
         {/* Tile 1 — today's agenda (base) */}
@@ -155,7 +155,7 @@ import { hero } from "../data/hero";
 
         {/* Tile 2 — WhatsApp reminder (overlap, +2°) */}
         <div
-          class="relative z-40 rounded-2xl border border-lilac-200 bg-white p-4 shadow-[var(--shadow-xl)] transition-transform duration-300 hover:-translate-y-1 lg:absolute lg:top-[54%] lg:-right-3 lg:w-[250px] lg:rotate-2"
+          class="relative z-40 rounded-2xl border border-lilac-200 bg-white p-4 shadow-[var(--shadow-xl)] transition-transform duration-300 hover:-translate-y-1 lg:absolute lg:top-[44%] lg:-right-3 lg:w-[248px] lg:rotate-2"
         >
           <p
             class="mb-2 text-[9px] font-bold uppercase tracking-[0.16em] text-lilac-700/55"
@@ -174,21 +174,34 @@ import { hero } from "../data/hero";
           </div>
         </div>
 
-        {/* Tile 3 — branded booking page (overlap, -2°) */}
+        {/* Tile 3 — branded booking page, richer (overlap, -2°) */}
         <div
-          class="relative z-20 rounded-2xl border border-lilac-200 bg-white p-4 shadow-[var(--shadow-xl)] transition-transform duration-300 hover:-translate-y-1 lg:absolute lg:-bottom-9 lg:-left-3 lg:w-[240px] lg:-rotate-2"
+          class="relative z-20 rounded-2xl border border-lilac-200 bg-white p-4 shadow-[var(--shadow-xl)] transition-transform duration-300 hover:-translate-y-1 lg:absolute lg:-bottom-3 lg:-left-3 lg:w-[252px] lg:-rotate-2"
         >
           <p
             class="text-[9px] font-bold uppercase tracking-[0.16em] text-lilac-700/55"
           >
             Tu página · book/amorelila
           </p>
-          <div class="mt-1.5 font-display text-lg leading-none text-lilac-700">
-            Amorelila Estética
+          {/* salon header */}
+          <div class="mt-2 flex items-center gap-2">
+            <span
+              class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-display text-base lowercase text-white"
+              style="background:var(--brand);">a</span
+            >
+            <div class="min-w-0">
+              <div
+                class="truncate font-display text-sm leading-none text-lilac-700"
+              >
+                Amorelila Estética
+              </div>
+              <div class="mt-0.5 text-[9px] text-lilac-700/55">
+                Curridabat · San José
+              </div>
+            </div>
           </div>
-          <div
-            class="relative mt-2 overflow-hidden rounded-xl bg-lilac-50 p-2.5"
-          >
+          {/* services */}
+          <div class="relative mt-2.5 overflow-hidden rounded-lg bg-lilac-50 p-2">
             <span
               class="absolute left-0 top-0 h-[3px] w-6"
               style="background:var(--service-pestanas);"></span>
@@ -198,9 +211,45 @@ import { hero } from "../data/hero";
             <div
               class="mt-0.5 flex justify-between text-[10px] text-lilac-700/70"
             >
-              <span>90 min</span>
-              <span class="font-semibold text-lilac-700">₡24.300</span>
+              <span>90 min</span><span class="font-semibold text-lilac-700"
+                >₡24.300</span
+              >
             </div>
+          </div>
+          <div class="relative mt-1.5 overflow-hidden rounded-lg bg-lilac-50 p-2">
+            <span
+              class="absolute left-0 top-0 h-[3px] w-6"
+              style="background:var(--service-unas);"></span>
+            <div class="text-[11px] font-semibold text-lilac-900">
+              Manicura con Gel X
+            </div>
+            <div
+              class="mt-0.5 flex justify-between text-[10px] text-lilac-700/70"
+            >
+              <span>75 min</span><span class="font-semibold text-lilac-700"
+                >₡16.950</span
+              >
+            </div>
+          </div>
+          {/* reserve button */}
+          <div
+            class="mt-2.5 flex h-8 items-center justify-center gap-1 rounded-lg text-[11px] font-semibold text-white"
+            style="background:var(--brand);"
+          >
+            Reservar
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              ><line x1="3" y1="8" x2="13" y2="8"></line><path d="M9 4L13 8L9 12"
+              ></path></svg
+            >
           </div>
         </div>
       </div>
