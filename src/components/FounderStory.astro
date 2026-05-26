@@ -1,0 +1,48 @@
+---
+import Eyebrow from "./Eyebrow.astro";
+import { founder } from "../data/founder";
+---
+
+<section id="historia" class="bg-lilac-100 px-6 py-20">
+  <div
+    class="mx-auto grid max-w-[1140px] items-center gap-7 md:grid-cols-[0.9fr_1.1fr] md:gap-[60px]"
+  >
+    {/* Photo — 4:5 portrait crop */}
+    <div
+      class="aspect-[4/5] w-full overflow-hidden rounded-[28px] shadow-[var(--shadow-lg)]"
+    >
+      <img
+        src={founder.photo}
+        alt={founder.alt}
+        width="800"
+        height="1000"
+        loading="lazy"
+        decoding="async"
+        class="h-full w-full object-cover"
+      />
+    </div>
+
+    {/* Story */}
+    <div>
+      <Eyebrow>{founder.eyebrow}</Eyebrow>
+      <h2
+        class="mb-[22px] mt-3.5 font-display text-[clamp(1.75rem,3.5vw,2.375rem)] font-normal leading-[1.15] tracking-[-0.01em] text-lilac-900"
+      >
+        {founder.quote}
+      </h2>
+      {
+        founder.paragraphs.map((p) => (
+          <p class="mb-3.5 text-base leading-[1.7] text-lilac-800">{p}</p>
+        ))
+      }
+      <div class="mt-[22px] flex items-center gap-3">
+        <span class="font-display text-[22px] text-lilac-700">{founder.name}</span>
+        <span
+          class="border-l-2 border-lilac-500 pl-3 text-xs text-lilac-700/70"
+        >
+          {founder.role}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
