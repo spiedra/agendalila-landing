@@ -16,9 +16,9 @@ export interface Feature {
 
 export const featuresHead = {
   eyebrow: "Producto",
-  title: "Todo lo que necesita un negocio de servicios. Nada de lo que no.",
+  title: "Todo lo que tu negocio necesita para funcionar.",
   description:
-    "Cinco superficies, una sola plataforma. Pensadas en este orden, porque así es como las descubrís cuando arrancás.",
+    "Agenda, clientes, recordatorios, tu página de reservas y métricas: todo en una sola plataforma.",
 };
 
 export const features: readonly Feature[] = [
@@ -54,7 +54,7 @@ export const features: readonly Feature[] = [
     eyebrow: "Recordatorios automáticos",
     title: "WhatsApp y email que se mandan solos — con tu voz.",
     description:
-      "Confirmaciones, recordatorios el día anterior, cumpleaños, win-back de clientes que hace meses no aparecen. Vos escribís la plantilla una vez; el sistema la manda mil.",
+      "Confirmaciones, recordatorios el día antes, saludos de cumpleaños y mensajes para clientes que hace rato no vienen. Vos escribís el mensaje una vez y el sistema se encarga del resto.",
     bullets: [
       "Confirmación al reservar + recordatorio 24h antes.",
       "Cumpleaños automático con descuento opcional.",
@@ -68,7 +68,7 @@ export const features: readonly Feature[] = [
     eyebrow: "Tu página de reservas",
     title: "Tu propia página de reservas — con tu marca, no la nuestra.",
     description:
-      "Tu página vive en tu propia dirección — `tu-salon.agendalila.com` — con tus colores, tu logo y solo tus servicios. La compartís donde quieras: Instagram, el bio de WhatsApp o una tarjeta.",
+      "Tu página tiene su propia dirección, `tu-salon.agendalila.com`, con tus colores, tu logo y solo tus servicios. La compartís donde quieras: Instagram, el bio de WhatsApp o una tarjeta.",
     bullets: [
       "Color y logo de tu negocio — no una marca genérica.",
       "Reserva en 4 pasos, optimizada para móvil.",
