@@ -1,0 +1,194 @@
+---
+import { hero } from "../data/hero";
+---
+
+<section id="top" class="relative overflow-hidden">
+  {/* Ambient warm-lilac glow — subtle, NOT an AI purple→blue gradient */}
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10"
+    style="background:
+      radial-gradient(60% 55% at 78% 12%, color-mix(in srgb, var(--color-lilac-300) 38%, transparent), transparent 70%),
+      radial-gradient(50% 50% at 8% 0%, color-mix(in srgb, var(--color-lilac-200) 45%, transparent), transparent 65%);"
+  >
+  </div>
+
+  <div
+    class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr]"
+  >
+    {/* ── Left: copy ── */}
+    <div>
+      <p
+        class="text-xs font-bold uppercase tracking-[0.12em] text-lilac-700/70"
+      >
+        {hero.eyebrow}
+      </p>
+
+      <h1
+        class="mt-4 font-display text-[clamp(2.1rem,5.2vw,3.6rem)] leading-[1.05] text-lilac-900"
+      >
+        {hero.headingLead}{" "}
+        <em
+          class="not-italic text-lilac-700"
+          style="background-image:linear-gradient(transparent 62%, color-mix(in srgb, var(--brand-decor) 38%, transparent) 0);"
+          >{hero.headingAccent}</em
+        >.
+      </h1>
+
+      <p class="mt-5 max-w-xl text-lg leading-relaxed text-lilac-800/85">
+        {hero.lede}
+      </p>
+
+      {/* Rubro chips — signal who it's for (incl. Barberías) in 5 seconds */}
+      <ul class="mt-6 flex flex-wrap gap-2" aria-label="Para qué negocios">
+        {
+          hero.rubros.map((r) => (
+            <li class="rounded-full border border-lilac-300 bg-white/60 px-3.5 py-1.5 text-sm font-medium text-lilac-700">
+              {r}
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a
+          href={hero.ctaPrimary.href}
+          class="inline-flex items-center gap-1.5 rounded-full bg-lilac-700 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-lilac-800"
+        >
+          {hero.ctaPrimary.label}
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="8" x2="13" y2="8"></line>
+            <path d="M9 4L13 8L9 12"></path>
+          </svg>
+        </a>
+        <a
+          href={hero.ctaGhost.href}
+          class="inline-flex items-center rounded-full border border-lilac-300 px-6 py-3 text-base font-semibold text-lilac-700 transition-colors hover:bg-lilac-100"
+        >
+          {hero.ctaGhost.label}
+        </a>
+      </div>
+
+      <p class="mt-6 flex items-center gap-2 text-sm text-lilac-700/70">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M9 12l2 2 4-4"></path>
+        </svg>
+        <span set:html={hero.meta}></span>
+      </p>
+    </div>
+
+    {/* ── Right: peek into the real product (3 stacked tiles) ── */}
+    <div aria-hidden="true" class="relative mx-auto w-full max-w-sm lg:mx-0">
+      <div class="flex flex-col gap-4">
+        {/* Tile 1 — today's agenda */}
+        <div
+          class="rounded-2xl border border-lilac-200 bg-white p-5 shadow-[var(--shadow-lg)]"
+        >
+          <p
+            class="text-[10px] font-bold uppercase tracking-[0.14em] text-lilac-700/60"
+          >
+            Citas hoy · martes 17
+          </p>
+          <div class="mt-1 font-display text-5xl leading-none text-lilac-800">
+            12
+          </div>
+          <div class="mt-3 flex gap-4 text-xs text-lilac-700/70">
+            <span class="flex items-center gap-1.5">
+              <span class="inline-block h-2 w-2 rounded-full bg-lilac-500"
+              ></span>8 completadas</span
+            >
+            <span class="flex items-center gap-1.5">
+              <span class="inline-block h-2 w-2 rounded-full bg-lilac-200"
+              ></span>4 pendientes</span
+            >
+          </div>
+          <div class="my-3 h-px bg-lilac-150"></div>
+          <p
+            class="text-[9px] font-bold uppercase tracking-[0.14em] text-lilac-700/55"
+          >
+            Próxima
+          </p>
+          <div class="mt-1.5 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold text-lilac-900">
+                Saskia Solano
+              </div>
+              <div class="text-xs text-lilac-700/70">
+                Pestañas voluminosas · Estefanía
+              </div>
+            </div>
+            <div class="text-sm font-semibold text-lilac-700">14:00</div>
+          </div>
+        </div>
+
+        {/* Tile 2 — WhatsApp reminder (offset for editorial rhythm) */}
+        <div
+          class="ml-8 rounded-2xl border border-lilac-200 bg-white p-4 shadow-[var(--shadow-lg)]"
+        >
+          <p
+            class="mb-2 text-[10px] font-bold uppercase tracking-[0.14em] text-lilac-700/60"
+          >
+            Recordatorio · 18:00
+          </p>
+          <div
+            class="rounded-2xl px-3 py-2.5 text-xs leading-relaxed"
+            style="background:#d3f9d8;color:#1d4b2d;"
+          >
+            Hola Saskia 💜 te recordamos tu cita mañana a las 14:00 en Amorelila.
+            ¡Te esperamos!
+          </div>
+          <div class="mt-1.5 text-right text-[10px] text-lilac-700/60">
+            Enviado por AgendaLila
+          </div>
+        </div>
+
+        {/* Tile 3 — branded booking page mini */}
+        <div
+          class="rounded-2xl border border-lilac-200 bg-white p-4 shadow-[var(--shadow-lg)]"
+        >
+          <p
+            class="text-[10px] font-bold uppercase tracking-[0.14em] text-lilac-700/60"
+          >
+            Tu página · book/amorelila
+          </p>
+          <div class="mt-1.5 font-display text-lg leading-none text-lilac-700">
+            Amorelila Estética
+          </div>
+          <div class="relative mt-2 overflow-hidden rounded-xl bg-lilac-50 p-2.5">
+            <span
+              class="absolute left-0 top-0 h-[3px] w-6"
+              style="background:var(--service-pestanas);"></span>
+            <div class="text-[11px] font-semibold text-lilac-900">
+              Extensión de pestañas
+            </div>
+            <div class="mt-0.5 flex justify-between text-[10px] text-lilac-700/70">
+              <span>90 min</span>
+              <span class="font-semibold text-lilac-700">₡24.300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
