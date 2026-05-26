@@ -59,6 +59,17 @@ const selectClass = `${fieldClass} [&>option]:text-lilac-900`;
       novalidate={false}
     >
       <div id="cta-body">
+        {/* Honeypot — bots fill this; humans never see or tab to it. */}
+        <div class="absolute left-[-9999px]" aria-hidden="true">
+          <label
+            >No completar<input
+              type="text"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+            /></label
+          >
+        </div>
         <h3 class="mb-4 text-base font-semibold text-white">{cta.formHeading}</h3>
 
         <div class="flex flex-col gap-3.5">
@@ -145,6 +156,13 @@ const selectClass = `${fieldClass} [&>option]:text-lilac-900`;
             </svg>
           </button>
           <p class="mt-3 text-center text-[11px] text-lilac-300">{cta.note}</p>
+          <p
+            id="cta-error"
+            hidden
+            class="mt-2 text-center text-[12px] text-[#ffb9c4]"
+          >
+            No se pudo enviar. Probá de nuevo o escribinos a hola@agendalila.com.
+          </p>
         </div>
       </div>
 
@@ -179,19 +197,37 @@ const selectClass = `${fieldClass} [&>option]:text-lilac-900`;
 </section>
 
 <script>
-  // Client-side success only. TODO: POST to a CF Pages Function
-  // (→ D1 leads + Resend notification) once the repo is connected to Pages.
+  // POSTs to the /api/request-invite Pages Function (→ D1 leads + Resend).
   const form = document.getElementById("cta-form") as HTMLFormElement | null;
   const body = document.getElementById("cta-body");
   const success = document.getElementById("cta-success");
-  form?.addEventListener("submit", (e) => {
+  const error = document.getElementById("cta-error");
+  const submitBtn = form?.querySelector(
+    'button[type="submit"]',
+  ) as HTMLButtonElement | null;
+
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
-    if (body) body.hidden = true;
-    if (success) success.hidden = false;
-    success?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    const payload = Object.fromEntries(new FormData(form).entries());
+    if (submitBtn) submitBtn.disabled = true;
+    if (error) error.hidden = true;
+    try {
+      const res = await fetch("/api/request-invite", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("request failed");
+      if (body) body.hidden = true;
+      if (success) success.hidden = false;
+      success?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    } catch {
+      if (submitBtn) submitBtn.disabled = false;
+      if (error) error.hidden = false;
+    }
   });
 </script>

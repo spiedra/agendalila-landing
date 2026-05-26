@@ -1,8 +1,8 @@
 // Final CTA — the "Solicitá tu invitación" request form. Copy + option lists
 // live here; the field layout is bespoke in FinalCta.astro.
-// NOTE: submission is client-side only for now (shows the success state).
-// The real POST → CF Pages Function → D1 (leads) + Resend is pending the
-// repo being connected to Cloudflare Pages. Do NOT go live before that.
+// The form POSTs to /api/request-invite (functions/api/request-invite.js →
+// D1 `leads` + Resend). For it to actually save/notify, the Pages project
+// needs the `DB` D1 binding + `RESEND_API_KEY` secret (see schema.sql).
 
 export const cta = {
   eyebrow: "Acceso por invitación",
