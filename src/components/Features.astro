@@ -1,0 +1,45 @@
+---
+import SectionHead from "./SectionHead.astro";
+import Feature from "./Feature.astro";
+import AgendaMock from "./feature-mocks/AgendaMock.astro";
+import CrmMock from "./feature-mocks/CrmMock.astro";
+import RemindersMock from "./feature-mocks/RemindersMock.astro";
+import BookingMock from "./feature-mocks/BookingMock.astro";
+import MetricsMock from "./feature-mocks/MetricsMock.astro";
+import { features, featuresHead } from "../data/features";
+
+const MOCKS = {
+  agenda: AgendaMock,
+  crm: CrmMock,
+  reminders: RemindersMock,
+  booking: BookingMock,
+  metrics: MetricsMock,
+};
+---
+
+<section id="producto" class="px-6 py-20">
+  <div class="mx-auto max-w-[1140px]">
+    <SectionHead
+      eyebrow={featuresHead.eyebrow}
+      title={featuresHead.title}
+      description={featuresHead.description}
+    />
+    {
+      features.map((f) => {
+        const Mock = MOCKS[f.mock];
+        return (
+          <Feature
+            eyebrow={f.eyebrow}
+            title={f.title}
+            description={f.description}
+            bullets={f.bullets}
+            reverse={f.reverse}
+            tone={f.tone}
+          >
+            <Mock slot="visual" />
+          </Feature>
+        );
+      })
+    }
+  </div>
+</section>

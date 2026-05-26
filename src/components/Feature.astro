@@ -1,0 +1,95 @@
+---
+// One zig-zag feature block: text column (eyebrow + h3 + lede + ticks) and a
+// visual column (slot="visual") inside a tinted, rounded panel. Desktop columns
+// alternate via `reverse` (order utilities); mobile always leads with the text.
+import Eyebrow from "./Eyebrow.astro";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  bullets: readonly string[];
+  reverse?: boolean;
+  tone?: "lilac" | "peach" | "blue";
+}
+const {
+  eyebrow,
+  title,
+  description,
+  bullets,
+  reverse = false,
+  tone = "lilac",
+} = Astro.props;
+
+// Split the lede into plain / code runs on `backtick` spans.
+const runs = description
+  .split(/`([^`]+)`/)
+  .map((text, i) => ({ text, isCode: i % 2 === 1 }));
+
+const toneGradient = {
+  lilac:
+    "linear-gradient(135deg, var(--color-lilac-100) 0%, var(--color-lilac-200) 100%)",
+  peach: "linear-gradient(135deg, #fdf4ec 0%, #f5e8da 100%)",
+  blue: "linear-gradient(135deg, #ecf3f8 0%, #d8e6f0 100%)",
+}[tone];
+---
+
+<div
+  class="grid items-center gap-8 py-8 md:grid-cols-2 md:gap-[60px] md:py-[50px]"
+>
+  {/* Text */}
+  <div class={reverse ? "md:order-2" : "md:order-1"}>
+    <Eyebrow class="mb-2.5">{eyebrow}</Eyebrow>
+    <h3
+      class="mb-3.5 font-display text-[clamp(1.625rem,3.2vw,2.125rem)] font-normal leading-[1.15] tracking-[-0.01em] text-lilac-900"
+    >
+      {title}
+    </h3>
+    <p class="max-w-[480px] text-base leading-[1.6] text-lilac-800">
+      {
+        runs.map((r) =>
+          r.isCode ? (
+            <code class="font-mono text-[13px] text-lilac-700">{r.text}</code>
+          ) : (
+            r.text
+          ),
+        )
+      }
+    </p>
+    <ul class="mt-[18px] flex flex-col gap-2">
+      {
+        bullets.map((b) => (
+          <li class="flex items-start gap-2.5 text-sm text-lilac-800">
+            <span class="mt-px flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full bg-lilac-700/[0.14] text-lilac-700">
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12l5 5L20 7" />
+              </svg>
+            </span>
+            {b}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  {/* Visual */}
+  <div
+    class:list={[
+      "flex min-h-[280px] items-center justify-center rounded-[28px] p-[22px] shadow-[var(--shadow-md)] md:min-h-[360px] md:p-[30px]",
+      reverse ? "md:order-1" : "md:order-2",
+    ]}
+    style={`background:${toneGradient}`}
+  >
+    <slot name="visual" />
+  </div>
+</div>
