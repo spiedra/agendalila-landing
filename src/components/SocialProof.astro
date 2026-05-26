@@ -1,0 +1,47 @@
+---
+import { proof } from "../data/proof";
+---
+
+{/* Thin credibility band between the hero and the problem framing.
+    Desktop: founder lede + 3 stats in one row (1.4 / 1 / 1 / 1).
+    Mobile: lede spans full width, stats fall into a 2-col grid. */}
+<section
+  aria-label="Hecho y usado en un salón real"
+  class="border-y border-lilac-200 bg-lilac-100"
+>
+  <div
+    class="mx-auto grid max-w-[1140px] grid-cols-2 items-center gap-x-8 gap-y-6 px-5 py-8 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-8"
+  >
+    {/* Founder + provenance */}
+    <div class="col-span-2 flex items-center gap-3.5 md:col-span-1">
+      <img
+        src={proof.founder.photo}
+        alt={proof.founder.alt}
+        width="56"
+        height="56"
+        loading="lazy"
+        decoding="async"
+        class="h-14 w-14 shrink-0 rounded-full border-2 border-white object-cover shadow-[var(--shadow-sm)]"
+      />
+      <p class="text-sm leading-relaxed text-lilac-800">
+        {proof.ledePre}<strong class="font-semibold text-lilac-700"
+          >{proof.ledeStrong}</strong
+        >{proof.ledePost}
+      </p>
+    </div>
+
+    {/* Honest stats */}
+    {
+      proof.stats.map((stat) => (
+        <div>
+          <div class="text-[26px] font-bold leading-none tracking-[-0.04em] text-lilac-700">
+            {stat.value}
+          </div>
+          <div class="mt-1 text-xs leading-snug text-lilac-700/70">
+            {stat.label}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
