@@ -16,14 +16,14 @@ Invitation-only product → the landing's job is to tell the story and capture a
 
 ```bash
 npm install
-npm run dev      # http://127.0.0.1:3000
+npm run dev      # dev server (Windows: 3000 is reserved → npx astro dev --port 4321)
 npm run build    # static output → dist/
 npm run preview
 ```
 
 ## Deployment
 
-Push to `master` → Cloudflare Pages auto-deploys (build `npm run build`, output `dist/`).
+Cloudflare Pages, Git-integrated. **Push to `master` → production** (`agendalila.com`); other branches / PRs get preview URLs. Build `npm run build`, output `dist/`. Workflow: work on **`dev`** → merge `dev → master` to ship. (See `CLAUDE.md` → *Status / Operations* for the D1 + Resend + Email Routing setup behind the request form.)
 
 ## Notes
 
