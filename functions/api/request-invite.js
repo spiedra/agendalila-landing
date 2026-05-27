@@ -52,16 +52,20 @@ export async function onRequestPost({ request, env }) {
   }
 
   // Best-effort notification — the lead is already saved, so never fail on email.
+  // Best-effort notification. `_resend` below is a TEMPORARY debug field to
+  // confirm Resend accepts the send; remove it once verified.
+  let resendDebug = "no-key";
   if (env.RESEND_API_KEY) {
     try {
-      await fetch("https://api.resend.com/emails", {
+      const rr = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${env.RESEND_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: env.LEAD_NOTIFY_FROM || "AgendaLila <notificaciones@agendalila.com>",
+          // Must be a Resend-verified sender — the app sends from this domain.
+          from: env.LEAD_NOTIFY_FROM || "AgendaLila <no-reply@notificaciones.agendalila.com>",
           to: [env.LEAD_NOTIFY_TO || "info@agendalila.com"],
           subject: `Nueva solicitud — ${lead.negocio} (${lead.rubro})`,
           text:
@@ -73,12 +77,15 @@ export async function onRequestPost({ request, env }) {
             `Equipo: ${lead.equipo}`,
         }),
       });
-    } catch {
-      // ignore — the lead is persisted; the email is a courtesy
+      resendDebug = rr.ok
+        ? `ok:${rr.status}`
+        : `err:${rr.status}:${(await rr.text()).slice(0, 200)}`;
+    } catch (e) {
+      resendDebug = `throw:${(e && e.message) || "unknown"}`;
     }
   }
 
-  return json({ ok: true }, 200);
+  return json({ ok: true, _resend: resendDebug }, 200);
 }
 
 function json(body, status) {
