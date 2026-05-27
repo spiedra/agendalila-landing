@@ -1,0 +1,13 @@
+{
+  "name": "AgendaLila",
+  "short_name": "AgendaLila",
+  "description": "Software de citas y CRM para tu negocio de servicios.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6fc",
+  "theme_color": "#725f94",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

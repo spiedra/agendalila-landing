@@ -68,8 +68,10 @@ const jsonLd = {
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Favicon (TODO: add .ico / apple-touch-icon.png / manifest.webmanifest) -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- Favicon + app icons -->
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <!-- Font preloading: iCiel Cadena self-hosted; Montserrat via Google -->
     <link
