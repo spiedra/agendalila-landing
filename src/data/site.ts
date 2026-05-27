@@ -14,26 +14,26 @@ export const site = {
   instagram: { handle: "@agendalila", url: "https://instagram.com/agendalila" },
 
   // Primary CTA — invitation-only, used across the page.
-  cta: { label: "Solicitá tu invitación", href: "#solicitar" },
+  cta: { label: "Solicitá tu invitación", href: "/#solicitar" },
 
   nav: [
-    { label: "Producto", href: "#producto" },
-    { label: "Historia", href: "#historia" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Producto", href: "/#producto" },
+    { label: "Historia", href: "/#historia" },
+    { label: "FAQ", href: "/#faq" },
   ] satisfies NavLink[],
 
   footer: {
     producto: [
-      { label: "Agenda", href: "#producto" },
-      { label: "CRM", href: "#producto" },
-      { label: "Recordatorios", href: "#producto" },
-      { label: "Página de reservas", href: "#producto" },
-      { label: "Métricas", href: "#producto" },
+      { label: "Agenda", href: "/#producto" },
+      { label: "CRM", href: "/#producto" },
+      { label: "Recordatorios", href: "/#producto" },
+      { label: "Página de reservas", href: "/#producto" },
+      { label: "Métricas", href: "/#producto" },
     ] satisfies NavLink[],
     empresa: [
-      { label: "La historia", href: "#historia" },
-      { label: "FAQ", href: "#faq" },
-      { label: "Solicitar invitación", href: "#solicitar" },
+      { label: "La historia", href: "/#historia" },
+      { label: "FAQ", href: "/#faq" },
+      { label: "Solicitar invitación", href: "/#solicitar" },
     ] satisfies NavLink[],
   },
 } as const;
