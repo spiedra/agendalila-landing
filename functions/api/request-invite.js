@@ -52,12 +52,10 @@ export async function onRequestPost({ request, env }) {
   }
 
   // Best-effort notification — the lead is already saved, so never fail on email.
-  // Best-effort notification. `_resend` below is a TEMPORARY debug field to
-  // confirm Resend accepts the send; remove it once verified.
-  let resendDebug = "no-key";
+  // Best-effort notification — the lead is already saved, so never fail on email.
   if (env.RESEND_API_KEY) {
     try {
-      const rr = await fetch("https://api.resend.com/emails", {
+      await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${env.RESEND_API_KEY}`,
@@ -77,15 +75,12 @@ export async function onRequestPost({ request, env }) {
             `Equipo: ${lead.equipo}`,
         }),
       });
-      resendDebug = rr.ok
-        ? `ok:${rr.status}`
-        : `err:${rr.status}:${(await rr.text()).slice(0, 200)}`;
-    } catch (e) {
-      resendDebug = `throw:${(e && e.message) || "unknown"}`;
+    } catch {
+      // ignore — the lead is persisted; the email is a courtesy
     }
   }
 
-  return json({ ok: true, _resend: resendDebug }, 200);
+  return json({ ok: true }, 200);
 }
 
 function json(body, status) {

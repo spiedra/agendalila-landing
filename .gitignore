@@ -16,3 +16,7 @@ version*.png
 # Environment
 .env
 .env.*
+.dev.vars
+
+# Misc / stray
+logs.txt
