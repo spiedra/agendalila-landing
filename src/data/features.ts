@@ -54,7 +54,7 @@ export const features: readonly Feature[] = [
     eyebrow: "Recordatorios",
     title: "Que no se te pase recordarle a ninguna clienta.",
     description:
-      "Hoy, el recordatorio por email se manda solo: confirmación al reservar y aviso el día antes. Y ya viene lo más esperado — recordatorios automáticos por WhatsApp, el canal donde tus clientas de verdad abren el mensaje.",
+      "El recordatorio por email se manda solo: confirmación al reservar y aviso el día antes. Y pronto, también por WhatsApp.",
     bullets: [
       "Email automático: confirmación, recordatorio 24h antes y saludo de cumpleaños.",
       { text: "Recordatorios automáticos por WhatsApp", soon: true },
