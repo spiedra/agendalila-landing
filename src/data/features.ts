@@ -8,7 +8,7 @@ export interface Feature {
   eyebrow: string;
   title: string;
   description: string;
-  bullets: readonly string[];
+  bullets: readonly (string | { text: string; soon?: boolean })[];
   mock: "agenda" | "crm" | "reminders" | "booking" | "metrics";
   tone: "lilac" | "peach" | "blue";
   reverse: boolean;
@@ -54,10 +54,10 @@ export const features: readonly Feature[] = [
     eyebrow: "Recordatorios",
     title: "Que no se te pase recordarle a ninguna clienta.",
     description:
-      "El recordatorio por email sale solo: confirmación al reservar y aviso el día antes. Para WhatsApp, AgendaLila te deja el mensaje listo para enviar con un toque, con tu voz. (Y el envío automático por WhatsApp ya viene en camino.)",
+      "Hoy, el recordatorio por email se manda solo: confirmación al reservar y aviso el día antes. Y ya viene lo más esperado — recordatorios automáticos por WhatsApp, el canal donde tus clientas de verdad abren el mensaje.",
     bullets: [
       "Email automático: confirmación, recordatorio 24h antes y saludo de cumpleaños.",
-      "WhatsApp en un toque: el mensaje ya escrito, vos solo enviás.",
+      { text: "Recordatorios automáticos por WhatsApp", soon: true },
       "Plantillas editables — el tono lo ponés vos.",
     ],
     mock: "reminders",
