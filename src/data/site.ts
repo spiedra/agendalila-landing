@@ -11,7 +11,6 @@ export const site = {
   tagline:
     "Software de citas y CRM para negocios de servicios — hecho por una esteticista que vive el problema.",
   email: "info@agendalila.com",
-  instagram: { handle: "@agendalila", url: "https://instagram.com/agendalila" },
 
   // Primary CTA — invitation-only, used across the page.
   cta: { label: "Solicitá tu invitación", href: "/#solicitar" },
