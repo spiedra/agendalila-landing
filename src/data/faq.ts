@@ -18,7 +18,7 @@ export const faqs = [
   },
   {
     q: "¿Funciona para una barbería o solo para salones de estética?",
-    a: "Funciona igual de bien para una barbería, un salón de uñas, un spa, una estilista independiente o un estudio de tatuajes que agenda por horas: cualquier negocio que reserve el tiempo de una persona para un servicio. Los colores y los servicios se ajustan a tu rubro.",
+    a: "Funciona igual de bien para una barbería, una manicurista, un spa, una estilista independiente o un estudio de tatuajes que agenda por horas: cualquier negocio que reserve el tiempo de una persona para un servicio. Los colores y los servicios se ajustan a tu rubro.",
   },
   {
     q: "¿Necesito enseñarle al equipo a usarlo?",

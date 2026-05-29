@@ -16,7 +16,7 @@ export const problemSection = {
     {
       icon: "book",
       title: "Cuaderno + memoria",
-      desc: "Las notas del cliente viven en tu cabeza. Cuando volvés a verla a los seis meses, no te acordás qué prefiere.",
+      desc: "Las notas del cliente viven en tu cabeza. Y entre tantas clientas, no te acordás de lo que prefiere cada una.",
     },
     {
       icon: "ghost",

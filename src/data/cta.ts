@@ -22,6 +22,6 @@ export const cta = {
     "Recibimos tu solicitud. Te respondemos por WhatsApp en 1-2 días con los próximos pasos.",
 
   paises: ["Costa Rica", "Panamá", "Guatemala", "Nicaragua", "Honduras", "El Salvador", "México", "Colombia", "Otro"],
-  rubros: ["Salón de belleza", "Barbería", "Uñas", "Spa / masajes", "Estética / dermo", "Tatuajes / piercing", "Otro"],
+  rubros: ["Salón de belleza", "Barbería", "Manicurista", "Spa / masajes", "Estética / dermo", "Tatuajes / piercing", "Otro"],
   equipos: ["Solo yo", "2–3 personas", "4–6 personas", "7+ personas"],
 } as const;

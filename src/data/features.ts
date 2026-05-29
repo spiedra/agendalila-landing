@@ -51,13 +51,13 @@ export const features: readonly Feature[] = [
     reverse: true,
   },
   {
-    eyebrow: "Recordatorios automáticos",
-    title: "WhatsApp y email que se mandan solos — con tu voz.",
+    eyebrow: "Recordatorios",
+    title: "Que no se te pase recordarle a ninguna clienta.",
     description:
-      "Confirmaciones, recordatorios el día antes, saludos de cumpleaños y mensajes para clientes que hace rato no vienen. Vos escribís el mensaje una vez y el sistema se encarga del resto.",
+      "El recordatorio por email sale solo: confirmación al reservar y aviso el día antes. Para WhatsApp, AgendaLila te deja el mensaje listo para enviar con un toque, con tu voz. (Y el envío automático por WhatsApp ya viene en camino.)",
     bullets: [
-      "Confirmación al reservar + recordatorio 24h antes.",
-      "Cumpleaños automático con descuento opcional.",
+      "Email automático: confirmación, recordatorio 24h antes y saludo de cumpleaños.",
+      "WhatsApp en un toque: el mensaje ya escrito, vos solo enviás.",
       "Plantillas editables — el tono lo ponés vos.",
     ],
     mock: "reminders",

@@ -1,27 +1,37 @@
 ---
-// Reminders feature mock — a WhatsApp-style thread (auto reminder + reply).
+// Reminders feature mock — a WhatsApp-style thread seen from the SALON's phone:
+// AgendaLila's reminder is the SENT message (green, right); the client's reply
+// is RECEIVED (grey, left). WhatsApp send is one-tap-assisted today (fully
+// automatic WhatsApp is roadmap), so this reads as a real conversation.
 ---
 
 <div class="w-[240px] overflow-hidden rounded-[28px] bg-white p-4 shadow-[var(--shadow-lg)]">
   <div class="mb-2 text-center text-[11px] text-lilac-700/70">
-    +506 8678 6149 · 18:02
+    Mariana Castro · hoy 18:02
   </div>
   <div class="flex flex-col">
-    <div class="mb-2 max-w-[85%] self-start rounded-2xl rounded-bl-[4px] bg-lilac-150 px-3.5 py-[11px] text-[13px] leading-[1.4] text-lilac-900">
-      Hola Saskia 💜 te recordamos tu cita mañana <strong>martes 17 a las
+    {/* Salon → client: the reminder AgendaLila sends (sent = green, right) */}
+    <div
+      class="mb-2 ml-auto max-w-[88%] rounded-2xl rounded-br-[4px] px-3.5 py-[11px] text-[13px] leading-[1.4]"
+      style="background:#d3f9d8; color:#1d4b2d;"
+    >
+      Hola Mariana 💜 te recordamos tu cita mañana <strong>martes 17 a las
       14:00</strong> en Amorelila Estética para extensión de pestañas voluminosas
       con Estefanía.
     </div>
-    <div class="mb-2 max-w-[85%] self-start rounded-2xl rounded-bl-[4px] bg-lilac-150 px-3.5 py-[11px] text-[11px] leading-[1.4] text-lilac-900/80">
-      Si necesitás cambiarla, respondé acá o tocá → amorelila.agendalila.com
-    </div>
-    <div class="px-1 text-right text-[10px] text-lilac-700/70">enviado · 18:02</div>
     <div
-      class="mb-2 ml-auto max-w-[85%] rounded-2xl rounded-br-[4px] px-3.5 py-[11px] text-[13px] leading-[1.4]"
+      class="mb-1 ml-auto max-w-[88%] rounded-2xl rounded-br-[4px] px-3.5 py-[11px] text-[11px] leading-[1.4]"
       style="background:#d3f9d8; color:#1d4b2d;"
     >
-      ¡Perfecto, ahí estoy! 💜
+      Si necesitás cambiarla, respondé acá o tocá → amorelila.agendalila.com
     </div>
-    <div class="px-1 text-right text-[10px] text-lilac-700/70">leído · 18:04</div>
+    <div class="mb-2 px-1 text-right text-[10px] text-lilac-700/70">enviado · 18:02</div>
+    {/* Client → salon: her reply (received = grey, left) */}
+    <div
+      class="max-w-[88%] self-start rounded-2xl rounded-bl-[4px] bg-lilac-150 px-3.5 py-[11px] text-[13px] leading-[1.4] text-lilac-900"
+    >
+      ¡Perfecto, ahí estaré! 💜
+    </div>
+    <div class="px-1 text-left text-[10px] text-lilac-700/70">18:04</div>
   </div>
 </div>
