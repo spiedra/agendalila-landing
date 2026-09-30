@@ -4,7 +4,8 @@
 
 export const founder = {
   eyebrow: "La historia",
-  quote: "“Construí esto porque no encontraba nada que entendiera cómo trabajo.”",
+  quote:
+    "“Construí esto porque no encontraba nada que entendiera cómo trabajo.”",
   paragraphs: [
     "Soy Estefanía. Hace varios años abrí Amorelila Estética en Curridabat — un estudio chiquito, intencional, donde cada clienta tiene su tiempo. Pero la parte administrativa me ahogaba: WhatsApp lleno, un cuaderno gigante, dobles reservas.",
     "Probé las plataformas que existen. Unas estaban en inglés y en dólares; otras eran tan generales que no entendían cómo trabaja un salón como el mío. Así que empecé a construir lo que yo misma necesitaba.",

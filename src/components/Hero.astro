@@ -91,14 +91,16 @@ import Eyebrow from "./Eyebrow.astro";
           <circle cx="12" cy="12" r="9"></circle>
           <path d="M9 12l2 2 4-4"></path>
         </svg>
-        <span set:html={hero.meta}></span>
+        <span set:html={hero.meta} />
       </p>
     </div>
 
-    {/* ── Right: layered peek into the real product ──
+    {
+      /* ── Right: layered peek into the real product ──
         Desktop: tile-1 in flow + tiles 2/3 absolute, overlapping, rotated,
         hover-lift (matches the Claude Design composition). Mobile: clean
-        vertical stack (no overflow). Decorative → aria-hidden. */}
+        vertical stack (no overflow). Decorative → aria-hidden. */
+    }
     <div
       aria-hidden="true"
       class="relative mx-auto w-full max-w-[460px] lg:mx-0 lg:min-h-[500px]"
@@ -198,7 +200,9 @@ import Eyebrow from "./Eyebrow.astro";
             </div>
           </div>
           {/* services */}
-          <div class="relative mt-2.5 overflow-hidden rounded-lg bg-lilac-50 p-2">
+          <div
+            class="relative mt-2.5 overflow-hidden rounded-lg bg-lilac-50 p-2"
+          >
             <span
               class="absolute left-0 top-0 h-[3px] w-6"
               style="background:var(--service-pestanas);"></span>
@@ -213,7 +217,9 @@ import Eyebrow from "./Eyebrow.astro";
               >
             </div>
           </div>
-          <div class="relative mt-1.5 overflow-hidden rounded-lg bg-lilac-50 p-2">
+          <div
+            class="relative mt-1.5 overflow-hidden rounded-lg bg-lilac-50 p-2"
+          >
             <span
               class="absolute left-0 top-0 h-[3px] w-6"
               style="background:var(--service-faciales);"></span>
@@ -244,8 +250,8 @@ import Eyebrow from "./Eyebrow.astro";
               stroke-linecap="round"
               stroke-linejoin="round"
               aria-hidden="true"
-              ><line x1="3" y1="8" x2="13" y2="8"></line><path d="M9 4L13 8L9 12"
-              ></path></svg
+              ><line x1="3" y1="8" x2="13" y2="8"></line><path
+                d="M9 4L13 8L9 12"></path></svg
             >
           </div>
         </div>

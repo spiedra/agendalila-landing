@@ -1,20 +1,58 @@
 ---
 // Agenda feature mock — a day view with category-coloured appointment rows.
 const rows = [
-  { initials: "VR", svc: "--service-depilacion", mix: "22%", name: "Valeria Rojas", detail: "Diseño de cejas · 45 min", time: "9:00" },
-  { initials: "DV", svc: "--service-faciales", mix: "25%", name: "Daniela Vargas", detail: "Limpieza facial · 90 min", time: "11:00", avColor: "var(--brand)" },
-  { initials: "MC", svc: "--service-pestanas", mix: "18%", name: "Mariana Castro", detail: "Pestañas voluminosas · 120 min", time: "14:00" },
-  { initials: "CM", svc: "--service-pestanas", mix: "30%", name: "Camila Mora", detail: "Lifting de pestañas · 60 min", time: "17:00" },
+  {
+    initials: "VR",
+    svc: "--service-depilacion",
+    mix: "22%",
+    name: "Valeria Rojas",
+    detail: "Diseño de cejas · 45 min",
+    time: "9:00",
+  },
+  {
+    initials: "DV",
+    svc: "--service-faciales",
+    mix: "25%",
+    name: "Daniela Vargas",
+    detail: "Limpieza facial · 90 min",
+    time: "11:00",
+    avColor: "var(--brand)",
+  },
+  {
+    initials: "MC",
+    svc: "--service-pestanas",
+    mix: "18%",
+    name: "Mariana Castro",
+    detail: "Pestañas voluminosas · 120 min",
+    time: "14:00",
+  },
+  {
+    initials: "CM",
+    svc: "--service-pestanas",
+    mix: "30%",
+    name: "Camila Mora",
+    detail: "Lifting de pestañas · 60 min",
+    time: "17:00",
+  },
 ];
 ---
 
-<div class="w-full max-w-[340px] rounded-2xl bg-white px-[18px] py-4 shadow-[var(--shadow-md)]">
-  <div class="mb-2 text-[9px] font-bold uppercase tracking-[2px] text-lilac-700/70">
+<div
+  class="w-full max-w-[340px] rounded-2xl bg-white px-[18px] py-4 shadow-[var(--shadow-md)]"
+>
+  <div
+    class="mb-2 text-[9px] font-bold uppercase tracking-[2px] text-lilac-700/70"
+  >
     Martes 17 · 4 citas
   </div>
   {
     rows.map((r, i) => (
-      <div class:list={["flex items-center gap-2.5 py-2", i > 0 && "border-t border-lilac-200"]}>
+      <div
+        class:list={[
+          "flex items-center gap-2.5 py-2",
+          i > 0 && "border-t border-lilac-200",
+        ]}
+      >
         <div
           class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold"
           style={`background:color-mix(in srgb, var(${r.svc}) ${r.mix}, white); color:${r.avColor ?? `var(${r.svc})`};`}
