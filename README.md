@@ -16,7 +16,7 @@ Invitation-only product → the landing's job is to tell the story and capture a
 
 ```bash
 npm install
-npm run dev      # dev server (Windows: 3000 is reserved → npx astro dev --port 4321)
+npm run dev      # dev server
 npm run build    # static output → dist/
 npm run preview
 ```
