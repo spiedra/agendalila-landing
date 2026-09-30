@@ -61,8 +61,8 @@ npx wrangler pages deployment tail --project-name agendalila-landing
 
 No image tooling is installed. `public/og-image.jpg` (1200×630), `public/favicon.png` (64×64) and `public/apple-touch-icon.png` (180×180) are screenshots of temporary pages built with the brand fonts and colors. To redo one: add a page under `src/pages/`, run the dev server, screenshot the page at the target size with a headless browser, save the image to `public/`, and delete the page.
 
-## Notes
+## Conventions
 
-- **Architecture/conventions** mirror the sibling `amorelila-landing` repo (proven Astro + Tailwind v4 + CF Pages setup). **Design/brand** comes from the Claude Design handoff (`marketing-saas` kit) — see `docs/`.
-- Content lives in `src/data/*.ts` — edit data, not templates.
-- `CLAUDE.md` has the full conventions + brand rules.
+- What every change must satisfy (git, methodology, architecture, code, documentation, observability, frontend, content): `.claude/rules/`. `CLAUDE.md` is Claude Code's entry point.
+- Visual design context: `.impeccable.md`. The review of the Claude Design handoff the site was built from: `docs/2026-05-26-marketing-saas-design-audit.md`.
+- The architecture mirrors the sibling `amorelila-landing` repo.
