@@ -7,9 +7,9 @@
 // Requires (set in the Pages project → Settings):
 //   - D1 binding named `DB`  (table `leads`, see /schema.sql)
 //   - secret `RESEND_API_KEY`
-//   - optional vars `LEAD_NOTIFY_TO` (default info@agendalila.com) and
-//     `LEAD_NOTIFY_FROM` (default "AgendaLila <notificaciones@agendalila.com>",
-//     must be on a Resend-verified domain).
+//   - optional vars `LEAD_NOTIFY_TO` and `LEAD_NOTIFY_FROM`, whose defaults
+//     are set where the email is sent. The sender must be on a
+//     Resend-verified domain.
 
 const FIELDS = ["nombre", "whatsapp", "pais", "negocio", "rubro", "equipo"];
 
@@ -51,7 +51,6 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "No se pudo guardar" }, 500);
   }
 
-  // Best-effort notification — the lead is already saved, so never fail on email.
   // Best-effort notification — the lead is already saved, so never fail on email.
   if (env.RESEND_API_KEY) {
     try {

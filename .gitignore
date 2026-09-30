@@ -7,11 +7,16 @@ dist/
 # Astro
 .astro/
 
-# Claude Code
-.claude/
+# Claude Code: personal and runtime files (the rest of .claude/ is shared)
+.claude/settings.local.json
+.claude/worktrees/
+CLAUDE.local.md
 
 # Reference screenshots
 version*.png
+
+# Playwright MCP snapshots and console logs
+.playwright-mcp/
 
 # Environment
 .env
