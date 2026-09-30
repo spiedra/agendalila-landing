@@ -59,7 +59,8 @@ user says to merge.
   skipped, and why. A reviewer's first question is always "how do you know", and a
   description that answers it before being asked is the point.
 - A branch that depends on another opens against that branch, not against `master`,
-  so its diff shows only its own work.
+  so its diff shows only its own work. Retarget it to `master` before its base merges:
+  deleting a merged base branch closes every pull request still opened against it.
 
 ## Merging
 
