@@ -6,11 +6,13 @@ Invitation-only product → the landing's job is to tell the story and capture a
 
 ## Stack
 
-- **[Astro 5](https://astro.build/)** — static site generator
-- **[Tailwind CSS 4](https://tailwindcss.com/)** — via `@tailwindcss/vite`
+- **[Astro](https://astro.build/)** — static site generator
+- **[Tailwind CSS](https://tailwindcss.com/)** — via `@tailwindcss/vite`
 - **[@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)**
-- **[Cloudflare Pages](https://pages.cloudflare.com/)** — hosting & auto-deploy
+- **[Cloudflare Pages](https://pages.cloudflare.com/)** — hosting, previews and the request form's function
 - **TypeScript** — strict
+
+Versions: `package.json`.
 
 ## Development
 
