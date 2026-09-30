@@ -70,7 +70,9 @@ const selectClass = `${fieldClass} [&>option]:text-lilac-900`;
             /></label
           >
         </div>
-        <h3 class="mb-4 text-base font-semibold text-white">{cta.formHeading}</h3>
+        <h3 class="mb-4 text-base font-semibold text-white">
+          {cta.formHeading}
+        </h3>
 
         <div class="flex flex-col gap-3.5">
           <div class="flex flex-col gap-[5px]">
@@ -107,7 +109,9 @@ const selectClass = `${fieldClass} [&>option]:text-lilac-900`;
           </div>
 
           <div class="flex flex-col gap-[5px]">
-            <label class={labelClass} for="cta-negocio">Nombre del negocio</label>
+            <label class={labelClass} for="cta-negocio"
+              >Nombre del negocio</label
+            >
             <input
               class={fieldClass}
               id="cta-negocio"
@@ -128,7 +132,12 @@ const selectClass = `${fieldClass} [&>option]:text-lilac-900`;
             </div>
             <div class="flex flex-col gap-[5px]">
               <label class={labelClass} for="cta-equipo">Equipo</label>
-              <select class={selectClass} id="cta-equipo" name="equipo" required>
+              <select
+                class={selectClass}
+                id="cta-equipo"
+                name="equipo"
+                required
+              >
                 <option value="" disabled selected>Tamaño…</option>
                 {cta.equipos.map((e) => <option>{e}</option>)}
               </select>
@@ -161,7 +170,8 @@ const selectClass = `${fieldClass} [&>option]:text-lilac-900`;
             hidden
             class="mt-2 text-center text-[12px] text-[#ffb9c4]"
           >
-            No se pudo enviar. Probá de nuevo o escribinos a info@agendalila.com.
+            No se pudo enviar. Probá de nuevo o escribinos a
+            info@agendalila.com.
           </p>
         </div>
       </div>

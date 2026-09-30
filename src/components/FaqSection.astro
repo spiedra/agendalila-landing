@@ -3,8 +3,10 @@ import SectionHead from "./SectionHead.astro";
 import { faqHead, faqs } from "../data/faq";
 ---
 
-{/* Native <details> accordion — accessible, no JS. `name` makes it exclusive
-    (one open at a time); the first is open by default. */}
+{
+  /* Native <details> accordion — accessible, no JS. `name` makes it exclusive
+    (one open at a time); the first is open by default. */
+}
 <section id="faq" class="bg-lilac-50 px-6 py-20">
   <div class="mx-auto max-w-[1140px]">
     <SectionHead eyebrow={faqHead.eyebrow} title={faqHead.title} />
@@ -18,7 +20,10 @@ import { faqHead, faqs } from "../data/faq";
           >
             <summary class="flex min-h-[44px] cursor-pointer items-center justify-between gap-2.5 px-[22px] py-[18px] text-[15px] font-semibold text-lilac-900">
               <span>{f.q}</span>
-              <span class="plus shrink-0 text-[22px] leading-none text-lilac-700 transition-transform duration-200" aria-hidden="true">
+              <span
+                class="plus shrink-0 text-[22px] leading-none text-lilac-700 transition-transform duration-200"
+                aria-hidden="true"
+              >
                 +
               </span>
             </summary>
