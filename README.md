@@ -23,7 +23,7 @@ npm run preview
 
 ## Deployment
 
-Cloudflare Pages, Git-integrated. **Push to `master` → production** (`agendalila.com`); other branches / PRs get preview URLs. Build `npm run build`, output `dist/`. Workflow: work on **`dev`** → merge `dev → master` to ship.
+Cloudflare Pages, Git-integrated: build `npm run build`, output `dist/`. Every pushed branch gets a preview URL. **`master` is production** (`agendalila.com`) and changes only through a merged pull request. Branches, commits, pull requests and merging: `.claude/rules/git.md`.
 
 ## Operations
 
