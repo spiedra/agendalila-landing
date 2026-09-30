@@ -15,6 +15,9 @@ CLAUDE.local.md
 # Reference screenshots
 version*.png
 
+# Playwright MCP snapshots and console logs
+.playwright-mcp/
+
 # Environment
 .env
 .env.*
