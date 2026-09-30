@@ -43,6 +43,10 @@ personality, principles) is `.impeccable.md`.
   for a salon.
 - No Liquid Glass (the admin app's look), no butterfly motif (the salon brand's), no
   icon mark in the page: the brand is the typographic wordmark.
+- Layouts are asymmetric and text is left-aligned, with spacing that scales through
+  `clamp()`.
+- Photos are real and span the businesses the site speaks to (barbershop, nails,
+  spa, aesthetics). Never stock imagery.
 - Never the generic AI look: purple-to-blue or cyan-on-dark gradients, gradient text,
   decorative glassmorphism, nested cards, grids of identical icon cards, everything
   centered, pure black or white.
